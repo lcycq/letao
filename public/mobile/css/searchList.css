@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.lt_sort {
+  background-color: #eee;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.lt_sort a {
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: #666;
+}
+
+.lt_sort a.now {
+  color: darkorange;
+}
+
+
+.loading {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #069;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 200px;
+  animation: play 1s ease-in-out infinite;
+}
+
+
+@keyframes play {
+  from{
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to{
+    transform: translateX(-50%) rotate(360deg);
+  }
+}

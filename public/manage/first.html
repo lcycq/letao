@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>乐淘管理系统-一级分类</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<!--侧边栏-->
+<div class="lt_aside">
+  <div class="brand">
+    <a href="index.html">黑马15期</a>
+  </div>
+  <div class="user">
+    <img src="images/default.jpg" alt="">
+    <p>超级管理员</p>
+  </div>
+  <div class="nav">
+    <ul>
+      <li>
+        <a href="user.html">
+          <span class="glyphicon glyphicon-user"></span>
+          用户管理
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <span class="glyphicon glyphicon-list"></span>
+          分类管理
+        </a>
+        <div class="child" style="display: block">
+          <a class="now"  href="first.html">一级分类</a>
+          <a href="second.html">二级分类</a>
+        </div>
+      </li>
+      <li>
+        <a href="product.html">
+          <span class="glyphicon glyphicon-tags"></span>
+          商品管理
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<!--主体区-->
+<div class="lt_main">
+  <!--topbar-->
+  <div class="lt_topbar">
+    <a href="javascript:;" class="pull-left icon_menu"><span class="glyphicon glyphicon-align-justify"></span></a>
+    <a href="javascript:;" class="pull-right icon_logout"><span class="glyphicon glyphicon-log-out"></span></a>
+  </div>
+
+
+  <div class="container-fluid">
+    <!--面包屑导航-->
+    <ol class="breadcrumb">
+      <li><a href="#">管理系统</a></li>
+      <li><a href="#">分类管理</a></li>
+      <li class="active">一级分类</li>
+    </ol>
+
+
+    <!--内容区域-->
+    <div class="lt_content">
+      <!--添加分类-->
+      <button class="btn btn-default mb_20 btn_add">添加分类</button>
+
+      <!--分类表格-->
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <td width="20%">序号</td>
+          <td width="80%">分类名称</td>
+        </tr>
+        </thead>
+        <tbody>
+        <!--挖个坑-->
+        </tbody>
+      </table>
+
+      <!--分页盒子-->
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+<!--role  aria   sr-only:  可以删掉-->
+<div class="modal fade" tabindex="-1" id="logoutModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <p class="text-danger">
+          <span class="glyphicon glyphicon-info-sign"></span>
+          您确定要退出后台管理系统吗？
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary btn_logout">退出</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="addModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">添加分类</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form">
+          <div class="form-group">
+            <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类的名称">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <!--
+          html5新增了几个属性：
+           placeholder：占位信息
+           autofocus:自动获取焦点
+           autoComplete:自动补全 默认是on,  off
+           multiple:多选  select  input:file
+           form="form" :form表单的id，允许你的input写到form的外面，可以通过form这个属性关联到表单，相当于写在form的里面。
+       -->
+        <button type="submit" form="form" class="btn btn-primary">添加</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/html" id="tpl">
+  {{each rows v i}}
+  <tr>
+    <td>{{(page-1)*size+i+1}}</td>
+    <td>{{v.categoryName}}</td>
+  </tr>
+  {{/each}}
+</script>
+
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<script src="js/first.js"></script>
+</body>
+</html>

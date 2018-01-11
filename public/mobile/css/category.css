@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+
+.lt_category_l {
+  width: 90px;
+  height: 100%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.lt_category_l a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  background-color: pink;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+.lt_category_l li.now a {
+  border-right: none;
+  background-color: #fff;
+}
+
+
+
+
+/*原因：
+  overflow:hidden触发了bfc
+  bfc:k块级 格式化 上下文
+  说白了，除了bfc的盒子是一个独立的盒子，不允许子元素影响到别人
+  bfc的盒子不需要清除浮动
+*/
+.lt_category_r {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.lt_category_r li {
+  width: 33.33%;
+  float: left;
+}
+
+.lt_category_r img {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto;
+}
+
+.lt_category_r p {
+  text-align: center;
+}
+
+.category_tips {
+  padding: 10px;
+  font-size: 12px;
+}

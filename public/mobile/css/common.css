@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+html,body {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.lt_container {
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+
+.lt_header {
+  width: 100%;
+  height: 45px;
+  background-color: #069;
+  position: absolute;
+  top: 0;
+}
+
+
+.lt_header .icon_left,
+.lt_header .icon_right{
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+}
+
+.lt_header h4 {
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  font-weight: 400;
+  margin: 0;
+}
+
+.lt_header .icon_left {
+  left: 0;
+}
+
+.lt_header .icon_right {
+  right: 0;
+}
+
+
+
+
+.lt_footer {
+  width: 100%;
+  height: 55px;
+  background-color: #069;
+  position: absolute;
+  bottom: 0;
+}
+
+
+.lt_footer li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/*这句话是什么意思  必须是.lt_footer下的li并且还要有now这个类才会生效*/
+.lt_footer li.now a{
+  color: darkorange;
+}
+
+.lt_footer li.now p {
+  color: darkorange;
+}
+
+.lt_footer a {
+  color: #fff;
+}
+
+.lt_footer p {
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+
+.lt_main {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /*可以保证，所有的内容全部都是在main内部*/
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+.lt_product {
+  padding: 10px;
+}
+
+.lt_product .item {
+  display: block;
+  float: left;
+  width: 48%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.lt_product .item:nth-child(odd){
+  margin-right: 4%;
+}
+
+.lt_product .item .proName {
+  height: 39px;
+}
+
+.lt_product .item .price {
+  color: red;
+}
+
+.lt_product .item .oldPrice {
+  text-decoration: line-through;
+}
+
+
+
+.lt_search {
+  padding: 10px;
+  position: relative;
+}
+
+.lt_search .search_input {
+  height: 34px;
+  border: 1px solid #007aff;
+  font-size: 12px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.lt_search .search_btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 0 5px 5px 0;
+}

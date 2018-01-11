@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>乐淘管理系统-商品管理</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<!--侧边栏-->
+<div class="lt_aside">
+  <div class="brand">
+    <a href="index.html">黑马15期</a>
+  </div>
+  <div class="user">
+    <img src="images/default.jpg" alt="">
+    <p>超级管理员</p>
+  </div>
+  <div class="nav">
+    <ul>
+      <li>
+        <a href="user.html">
+          <span class="glyphicon glyphicon-user"></span>
+          用户管理
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <span class="glyphicon glyphicon-list"></span>
+          分类管理
+        </a>
+        <div class="child" style="display: none">
+          <a  href="first.html">一级分类</a>
+          <a href="second.html">二级分类</a>
+        </div>
+      </li>
+      <li>
+        <a class="now"  href="product.html">
+          <span class="glyphicon glyphicon-tags"></span>
+          商品管理
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<!--主体区-->
+<div class="lt_main">
+  <!--topbar-->
+  <div class="lt_topbar">
+    <a href="javascript:;" class="pull-left icon_menu"><span class="glyphicon glyphicon-align-justify"></span></a>
+    <a href="javascript:;" class="pull-right icon_logout"><span class="glyphicon glyphicon-log-out"></span></a>
+  </div>
+
+
+  <div class="container-fluid">
+    <!--面包屑导航-->
+    <ol class="breadcrumb">
+      <li><a href="#">管理系统</a></li>
+      <li class="active">商品管理</li>
+    </ol>
+
+
+    <!--内容区域-->
+    <div class="lt_content">
+      <!--添加分类-->
+      <button class="btn btn-default mb_20 btn_add">添加商品</button>
+
+      <!--分类表格-->
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <td width="10%">序号</td>
+          <td width="25%">商品名称</td>
+          <td width="25%">商品描述</td>
+          <td width="10%">商品库存</td>
+          <td width="10%">商品尺寸</td>
+          <td width="10%">商品状态</td>
+          <td width="10%">操作</td>
+        </tr>
+        </thead>
+        <tbody>
+       <!--挖个坑-->
+        </tbody>
+      </table>
+
+      <!--分页盒子-->
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+<!--role  aria   sr-only:  可以删掉-->
+<div class="modal fade" tabindex="-1" id="logoutModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <p class="text-danger">
+          <span class="glyphicon glyphicon-info-sign"></span>
+          您确定要退出后台管理系统吗？
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary btn_logout">退出</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="addModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">添加商品</h4>
+      </div>
+      <form id="form">
+        <div class="modal-body">
+
+          <!--下拉菜单-->
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                <span class="dropdown-text">请选择二级分类</span>
+                <span class="caret"></span>
+              </button>
+              <input type="hidden" name="brandId">
+              <ul class="dropdown-menu">
+                <!--再挖个坑-->
+
+              </ul>
+            </div>
+          </div>
+          <!--商品名称-->
+          <div class="form-group">
+            <input type="text" class="form-control" name="proName" placeholder="请输入商品的名称">
+          </div>
+          <!--商品描述-->
+          <div class="form-group">
+            <textarea class="form-control" rows="3" name="proDesc" placeholder="请输入商品的描述"></textarea>
+          </div>
+          <!--商品库存-->
+          <div class="form-group">
+            <input type="text" class="form-control" name="num" placeholder="请输入商品的库存">
+          </div>
+          <!--商品尺码-->
+          <div class="form-group">
+            <input type="text" class="form-control" name="size" placeholder="请输入商品的尺码(32-46)">
+          </div>
+          <!--商品原价-->
+          <div class="form-group">
+            <input type="text" class="form-control" name="oldPrice" placeholder="请输入商品的原价">
+          </div>
+          <!--商品价格-->
+          <div class="form-group">
+            <input type="text" class="form-control" name="price" placeholder="请输入商品的价格">
+            <input type="hidden" name="statu" value="1">
+          </div>
+
+
+          <div class="form-group">
+            <div class="fileupload_box">
+              <button class="btn btn-default">上传图片</button>
+
+              <!--
+                id:方便获取
+                name:pic1 指定图片的name属性，后端要通过这个name属性来获取到这张图片
+                data-url:指定图片上传的接口地址,上传商品图片的地址
+              -->
+              <input type="file" class="btn btn-default" id="fileupload" name="pic1" data-url="/product/addProductPic" multiple>
+            </div>
+          </div>
+          <div class="form-group img_box">
+            <!--<img src="images/none.png" width="100" height="100" alt="">-->
+            <!--<img src="images/none.png" width="100" height="100" alt="">-->
+            <!--<img src="images/none.png" width="100" height="100" alt="">-->
+            <input type="hidden" name="brandLogo">
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" form="form" class="btn btn-primary">添加</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<script type="text/html" id="tpl">
+  {{each rows v i}}
+  <tr>
+    <td>{{(page-1)*size+i+1}}</td>
+    <td>{{v.proName}}</td>
+    <td>{{v.proDesc}}</td>
+    <td>{{v.num}}</td>
+    <td>{{v.size}}</td>
+    <td>{{v.statu===1?'已上架':'已下架'}}</td>
+    <td>
+      {{if v.statu===1}}
+      <button class="btn btn-danger btn-sm">下架</button>
+      {{else if v.statu===0}}
+      <button class="btn btn-success btn-sm">上架</button>
+      {{/if}}
+    </td>
+  </tr>
+  {{/each}}
+</script>
+
+
+<script type="text/html" id="tpl2">
+  {{each rows v i}}
+  <li><a data-id="{{v.id}}" href="javascript:;">{{v.brandName}}</a></li>
+  {{/each}}
+</script>
+
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

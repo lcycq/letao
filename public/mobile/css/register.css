@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.myform {
+  padding: 10px;
+}
+
+.vcode_wrap input {
+  width: 65%;
+}
+
+.vcode_wrap button.mui-btn {
+  width: 30%;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+}
+
+.myform .btn_vcode.disabled {
+  background-color: #999;
+  border-color: #999;
+}
+
+.myform .btn_register {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+}
+
+.myform .tips {
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+}

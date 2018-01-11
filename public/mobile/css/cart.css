@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.lt_container {
+  padding-bottom: 85px;
+}
+
+
+.img_box {
+  float: left;
+}
+.img_box img {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+
+
+.info_box {
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+.info_box .proName {
+  color: #333;
+  margin-bottom: 5px;
+  height: 42px;
+}
+
+.mui-table-cell {
+  display: block;
+}
+
+.info_box .price {
+  color: red;
+}
+
+.info_box .oldPrice {
+  text-decoration: line-through;
+}
+
+.info_box .num {
+  float: right;
+}
+
+.ck {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+
+.lt_total {
+  width: 100%;
+  position: absolute;
+  bottom: 55px;
+  height: 30px;
+  line-height: 30px;
+  border-top: 1px solid #ccc;
+  z-index: 999;
+  background-color: #eee;
+  font-size: 12px;
+  padding-left: 10px;
+  color: red;
+}
+
+.lt_total .btn_order {
+  padding: 0 15px;
+  background-color: red;
+  color: #fff;
+}
+
+.lt_edit_size {
+  text-align: left;
+}
+
+.lt_edit_size span {
+  padding: 5px;
+  font-size: 12px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  line-height: 30px;
+}
+
+.lt_edit_size span.now {
+  background-color: #069;
+}
+
+.lt_edit_num {
+  text-align: left;
+}

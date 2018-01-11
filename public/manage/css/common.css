@@ -1,0 +1,176 @@
+@charset "UTF-8";
+html,body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*lv ha*/
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.body_bg{
+  background-color: #222d32;
+}
+
+.mt_150{
+  margin-top: 150px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+.panel h4 {
+  text-align: center;
+}
+
+
+/*侧边栏*/
+.lt_aside {
+  width: 180px;
+  height: 100%;
+  background-color: #222d32;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 1s;
+  z-index: 999;
+}
+
+.lt_aside.now {
+  left: -180px;
+}
+
+.lt_aside .brand a {
+  display: block;
+  width: 180px;
+  height: 50px;
+  background-color: #367fa9;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.lt_aside .user {
+  width: 180px;
+  height: 150px;
+}
+
+.lt_aside .user img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  border-radius: 50%;
+  margin: 30px auto 0;
+}
+
+.lt_aside .user p {
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
+
+.lt_aside .nav a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 30px;
+  color: #ccc;
+  border: 3px solid transparent;
+}
+
+.lt_aside .nav .child a {
+  padding-left: 50px;
+}
+
+.lt_aside .nav a.now {
+  border-left-color: #069;
+  background-color: #1d1f21;
+  color: #fff;
+}
+
+
+/*主体区样式*/
+.lt_main {
+  height: 100%;
+  width: 100%;
+  padding-left: 180px;
+  transition: all 1s;
+  padding-top: 70px;
+}
+
+.lt_main.now {
+  padding-left: 0;
+}
+
+.lt_topbar {
+  height: 50px;
+  background-color: #3c8dbc;
+  padding: 0 20px 0 200px;
+  margin-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  transition: all 1s;
+}
+
+.lt_topbar.now {
+  padding-left: 20px;
+}
+
+.lt_topbar a {
+  font-size: 16px;
+  color: #fff;
+  line-height: 50px;
+}
+
+/*报表*/
+.pic_left,
+.pic_right {
+  width: 45%;
+  height: 400px;
+}
+
+
+.fileupload_box {
+  width: 82px;
+  height: 34px;
+  position: relative;
+}
+
+.fileupload_box:hover button {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.fileupload_box input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
