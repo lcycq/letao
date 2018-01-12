@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>乐淘管理系统-登录</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./css/comment.css">
 </head>
 <body>
 
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4 mt-120">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="text-center">后台管理系统</h4>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="username" class="col-sm-3 control-label">用户名</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">密码</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="请输入密码" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-10">
+                                <button type="reset" class="btn btn-default">重置</button>
+                                <button type="submit" class="btn btn-primary">登录</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
+<script src="lib/jquery/jquery.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/nprogress/nprogress.js"></script>
+<script src="./js/comment.js"></script>
+<script src="./js/login.js"></script>
