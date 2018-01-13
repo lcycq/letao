@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>乐淘管理系统-主页</title>
+    <title>乐淘管理系统-一级分类</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
@@ -20,11 +20,11 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="user.html"><span class="glyphicon glyphicon-user"></span>用户管理</a></li>
+                <li class="now"><a href="user.html"><span class="glyphicon glyphicon-user"></span>用户管理</a></li>
                 <li>
                     <a href="#"><span class="glyphicon glyphicon-th-list"></span>分类管理</a>
-                    <div class="second">
-                        <a href="first.html">一级分类</a>
+                    <div class="second" style="display: block">
+                        <a class="active" href="first.html">一级分类</a>
                         <a href="second.html">二级分类</a>
                     </div>
                 
@@ -48,10 +48,8 @@
         <div class="lt_table">
             <ol class="breadcrumb">
                 <li><a href="#">管理系统</a></li>
-                <li class="active">首页</li>
+                <li class="active">一级分类</li>
             </ol>
-            <div id="left" class="pull-left"></div>
-            <div id="right" class="pull-right"></div>
         </div>
     </div>
 
