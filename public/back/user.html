@@ -50,6 +50,25 @@
                 <li><a href="#">管理系统</a></li>
                 <li class="active">用户管理</li>
             </ol>
+            <div class="lt_content">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>用户名</th>
+                            <th>手机号</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--模板填充数据-->
+                    </tbody>
+                </table>
+                <div class="text-right">
+                    <ul id="pagintor"></ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -71,6 +90,24 @@
             </div>
         </div>
     </div>
+    <!--乐淘退出模态框-->
+    <div class="modal fade" tabindex="-1" id="userModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;你确定要执行此操作吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
@@ -79,5 +116,26 @@
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="lib/echarts/echarts.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/comment.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/user.js"></script>
+
+<!--渲染页面数据模板-->
+<script type="text/html" id="userTpl">
+    {{each rows v i}}
+    <tr>
+        <td width="10%">{{(page-1)*size+i+1}}</td>
+        <td width="30%">{{v.username}}</td>
+        <td width="30%">{{v.mobile}}</td>
+        <td width="20%">{{v.isDelete == '1'? '启用':'禁用'}}</td>
+        <td width="10%" data-userid = "{{v.id}}">
+            {{if v.isDelete == 1}}
+            <button class="btn btn-danger btn-sm">禁用</button>
+            {{else if v.isDelete == 0}}
+            <button class="btn btn-success btn-sm">启用</button>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>

@@ -137,3 +137,13 @@ a:active {
 .lt_main.sh {
   padding-left: 0px;
 }
+.lt_content {
+  margin: 20px 20px;
+}
+.lt_content .table,
+.lt_content th {
+  text-align: center;
+}
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
