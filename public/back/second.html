@@ -48,8 +48,28 @@
         <div class="lt_table">
             <ol class="breadcrumb">
                 <li><a href="#">管理系统</a></li>
+                <li><a href="#">分类管理</a></li>
                 <li class="active">二级分类</li>
             </ol>
+            <div class="lt_content">
+                <button class="btn btn-default btn-fl">添加分类</button>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>一级分类名称</th>
+                        <th>二级分类名称</th>
+                        <th>二级分类logo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--模板填充数据-->
+                    </tbody>
+                </table>
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -79,5 +99,16 @@
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="lib/echarts/echarts.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/comment.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/second.js"></script>
+
+<script type="text/html" id="secondTpl">
+    <tr>
+        <td width="10%">1</td>
+        <td width="30%">户外馆</td>
+        <td width="30%">户外馆</td>
+        <td width="30%">户外馆</td>
+    </tr>
+</script>
