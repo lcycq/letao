@@ -140,6 +140,9 @@ a:active {
 .lt_content {
   margin: 20px 20px;
 }
+.lt_content button {
+  margin-bottom: 20px;
+}
 .lt_content .table,
 .lt_content th {
   text-align: center;

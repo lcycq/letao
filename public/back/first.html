@@ -52,10 +52,26 @@
                 <li class="active">一级分类</li>
             </ol>
             <div class="lt_content">
-                <button class="btn btn-default">添加分类</button>
-
+                <button class="btn btn-default btn-fl">添加分类</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>分类名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!--模板填充数据-->
+                        <tr>
+                            <td width="20%">1</td>
+                            <td width="80%">户外馆</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
             </div>
-
         </div>
     </div>
 
@@ -78,12 +94,47 @@
         </div>
     </div>
 
+    <!--乐淘添加分类模态框-->
+    <div class="modal fade" tabindex="-1" id="addModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类的名称">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <input type="submit" class="btn btn-primary btn-addF" form="form" value="添加">
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 <script src="lib/jquery/jquery.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="lib/echarts/echarts.min.js"></script>
 <script src="./js/comment.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/first.js"></script>
+
+<!--渲染页面内容模板-->
+<script type="text/html" id="firstTpl">
+    {{each rows v i}}
+        <tr>
+            <td width="20%">{{(page-1)*size+i+1}}</td>
+            <td width="80%">{{v.categoryName}}</td>
+        </tr>
+    {{/each}}
+</script>
