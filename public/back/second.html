@@ -91,6 +91,44 @@
             </div>
         </div>
     </div>
+    <!--乐淘添加分类模态框-->
+    <div class="modal fade" tabindex="-1" id="addModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+                    <form id="form">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                请选择一级分类 <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <!--模板添加    -->
+                                <li><a href="#">Action</a></li>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                        <input type="text" class="form-control" name="brandName" placeholder="请输入二级分类的名称">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-default">上传图片</button>
+                        </div>
+                        <div class="form-group">
+                            <img src="images/default.png" width="100px" height="100px">
+                        </div>
+                    </form>
+
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-logout" form="form">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
@@ -105,10 +143,12 @@
 <script src="./js/second.js"></script>
 
 <script type="text/html" id="secondTpl">
+    {{each rows v i}}
     <tr>
-        <td width="10%">1</td>
-        <td width="30%">户外馆</td>
-        <td width="30%">户外馆</td>
-        <td width="30%">户外馆</td>
+        <td width="10%">{{(page-1)*size+i+1}}</td>
+        <td width="30%">{{v.categoryName}}</td>
+        <td width="30%">{{v.brandName}}</td>
+        <td width="30%"><img src="{{v.brandLogo? v.brandLogo:'images/none.png'}}" width="30px" height="30px"></td>
     </tr>
+    {{/each}}
 </script>
