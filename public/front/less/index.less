@@ -1,0 +1,40 @@
+@charset "utf-8";
+.lt_nav {
+  padding: 10px;
+  li {
+    float: left;
+    width: 33.33%;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.lt_products {
+  padding: 10px;
+  li {
+    float: left;
+    border: 1px solid #ccc;
+    width: 48%;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    img {
+      width: 100%;
+      display: block;
+    }
+    .sp {
+      span:first-child {
+        color: red;
+      }
+      span:last-child {
+        text-decoration: line-through;
+      }
+    }
+  }
+  li:nth-child(odd){
+    margin-right: 4%;
+  }
+}
