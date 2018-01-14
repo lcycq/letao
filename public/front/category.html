@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/category.css">
+    <title>乐淘商城-分类页</title>
+</head>
+<body>
+<div class="lt_container">
+    <div class="lt_header">
+        <a href="javascript: history.go(-1);"><span class="mui-icon mui-icon-back home"></span></a>
+        <span class="fa fa-search search"></span>
+        <h4>乐淘分类</h4>
+    </div>
+    <div class="lt_main">
+        <div class="category-left">
+            <div class="mui-scroll-wrapper">
+                <ul class="mui-scroll">
+                   <!--模板渲染-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="category-right">
+            <div class="mui-scroll-wrapper">
+                <ul class="mui-scroll">
+                    <li>
+                        <img src="./images/brand1.png" alt="">
+                        <p>耐克</p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="lt_footer">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html" class="active">
+                    <span class="fa fa-bars"></span>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <span class="fa fa-user"></span>
+                    <p>会员中心</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/mui/js/mui.min.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="js/comment.js"></script>
+<script src="js/category.js"></script>
+
+
+<!--渲染左边的模板-->
+<script type="text/html" id="categoryTpl">
+    {{each rows v i}}
+    <li class="{{i==0?'active':''}}" data-id="{{v.id}}"><a href="#"><span>{{v.categoryName}}</span></a></li>
+    {{/each}}
+</script>
+
+<!--渲染右边的模板-->
+<script type="text/html" id="cTpl">
+    {{if total == 0}}
+    <p class="nop">该分类下没有更多的分类信息</p>
+    {{/if}}
+    {{each rows v i}}
+    <li>
+        <img src="{{v.brandLogo}}" alt="">
+        <p>{{v.brandName}}</p>
+    </li>
+    {{/each}}
+</script>

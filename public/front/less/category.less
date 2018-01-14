@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+.category-left {
+  width: 90px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  li {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid red;
+    border-right: 1px solid red;
+    line-height: 50px;
+    text-align: center;
+    background-color: pink;
+  }
+  li.active {
+    background-color: #fff;
+    border-right: 1px solid transparent;
+  }
+}
+.category-right {
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+  li {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    img {
+      width: 62px;
+      height: 62px;
+    }
+  }
+}
+.nop {
+  padding: 10px;
+  color: #000;
+}
