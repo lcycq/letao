@@ -186,7 +186,6 @@ $(function(){
     });
 
     //上传图片逻辑
-
     $("#image").fileupload({
         dataType:"json",
         //e：事件对象

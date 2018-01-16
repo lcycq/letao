@@ -8,36 +8,39 @@
     <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="css/comment.css">
-    <link rel="stylesheet" href="css/category.css">
-    <title>乐淘商城-分类页</title>
+    <link rel="stylesheet" href="css/searchList.css">
+    <title>乐淘商城-商品列表</title>
 </head>
 <body>
 <div class="lt_container">
     <div class="lt_header">
         <a href="javascript: history.go(-1);"><span class="mui-icon mui-icon-back home"></span></a>
-        <a href="search.html"><span class="fa fa-search search"></span></a>
-        <h4>乐淘分类</h4>
+        <h4>搜索中心</h4>
     </div>
     <div class="lt_main">
         <div class="category-left">
             <div class="mui-scroll-wrapper">
-                <ul class="mui-scroll">
-                   <!--模板渲染-->
-                </ul>
+                <div class="mui-scroll">
+                    <div class="lt_search">
+                        <input type="text" class="search_input" placeholder="请输入搜索关键字">
+                        <button class='mui-btn mui-btn-blue search_btn'>搜索</button>
+                    </div>
+
+                    <div class="lt_sort">
+                        <a href="javascript:;">上架时间<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:;" data-type="price">价格<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:;" data-type="num">库存<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:;">折扣<span class="fa fa-angle-down"></span></a>
+                    </div>
+
+                    <div class="lt_products">
+
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div class="category-right">
-            <div class="mui-scroll-wrapper">
-                <ul class="mui-scroll">
-                    <li>
-                        <img src="./images/brand1.png" alt="">
-                        <p>耐克</p>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
     </div>
     <div class="lt_footer">
         <ul>
@@ -74,25 +77,26 @@
 <script src="lib/mui/js/mui.min.js"></script>
 <script src="lib/zepto/zepto.min.js"></script>
 <script src="js/comment.js"></script>
-<script src="js/category.js"></script>
+<script src="js/searchList.js"></script>
 
-
-<!--渲染左边的模板-->
-<script type="text/html" id="categoryTpl">
-    {{each rows v i}}
-    <li class="{{i==0?'active':''}}" data-id="{{v.id}}"><a href="#"><span>{{v.categoryName}}</span></a></li>
-    {{/each}}
-</script>
-
-<!--渲染右边的模板-->
-<script type="text/html" id="cTpl">
-    {{if total == 0}}
-    <p class="nop">该分类下没有更多的分类信息</p>
+<script type="text/html" id="tpl">
+    {{if data.length === 0}}
+    <p>没有更多的商品信息</p>
     {{/if}}
-    {{each rows v i}}
-    <li>
-        <img src="{{v.brandLogo}}" alt="">
-        <p>{{v.brandName}}</p>
-    </li>
-    {{/each}}
+
+    <ul>
+        {{each data v i}}
+        <li>
+            <img src="{{v.pic[0].picAddr}}" alt="">
+            <p class="mui-ellipsis-2">{{v.proDesc}}</p>
+            <p class="sp">
+                <span>&yen;{{v.price}}</span>
+                <span>&yen;{{v.oldPrice}}</span>
+            </p>
+            <button class="mui-btn mui-btn-blue" data-id="{{v.id}}">立即购买</button>
+        </li>
+        {{/each}}
+    </ul>
 </script>
+
+

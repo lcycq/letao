@@ -3,7 +3,6 @@
  */
 $(function () {
 
-
   //分页渲染的功能
   var currentPage = 1;
   var pageSize = 2;
@@ -83,7 +82,6 @@ $(function () {
 
   render();
 
-
   //显示模态框
   $(".btn_add").on("click", function () {
     $("#addModal").modal("show");
@@ -109,7 +107,6 @@ $(function () {
 
   });
 
-
   //给dropdown下的所有的a标签注册委托事件
   $(".dropdown-menu").on("click", "a", function () {
 
@@ -123,7 +120,6 @@ $(function () {
     $form.data("bootstrapValidator").updateStatus("brandId", "VALID");
 
   });
-
 
   //表单校验
   var $form = $("form");
@@ -208,7 +204,6 @@ $(function () {
     }
   });
 
-
   //图片上传
   $("#fileupload").fileupload({
     dataType:"json",
@@ -234,8 +229,6 @@ $(function () {
       }
     }
   });
-
-
 
   //添加商品
   //给表单注册校验成功事件

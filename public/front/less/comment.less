@@ -2,6 +2,7 @@
 
 html,body {
   height: 100%;
+  background-color: #fff;
 }
 * {
   margin: 0;
@@ -46,6 +47,7 @@ html,body {
     line-height: 45px;
     margin: 0;
     font-weight: normal;
+    padding: 0 45px;
   }
 }
 .lt_footer {
@@ -79,4 +81,46 @@ html,body {
   width: 100%;
   overflow: hidden;
   position: relative;
+}
+.lt_search {
+  padding: 10px;
+  .search_input {
+    margin-bottom: 0;
+    border: 1px solid #007aff;
+    font-size: 12px;
+  }
+  .search_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 40px;
+    border-radius: 0 5px 5px 0;
+  }
+}
+.lt_products {
+  padding: 10px;
+  li {
+    float: left;
+    border: 1px solid #ccc;
+    width: 48%;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    img {
+      width: 100%;
+      display: block;
+    }
+    .sp {
+      span:first-child {
+        color: red;
+      }
+      span:last-child {
+        text-decoration: line-through;
+      }
+    }
+  }
+  li:nth-child(odd){
+    margin-right: 4%;
+  }
 }
