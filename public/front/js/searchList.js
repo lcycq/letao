@@ -48,6 +48,7 @@ $(function(){
             data: obj,
             success:function(info){
                 $('.lt_products').html('<div class="loading"></div>');
+                console.log(info);
                 //显示加载动画
                 setTimeout(function(){
                     $('.lt_products').html(template('tpl',info));
@@ -60,6 +61,15 @@ $(function(){
     //给搜索按钮添加点击事件
     $('.search_btn').on('click',function(){
        render();
+    });
+
+    //给‘立即购买’按钮添加事件，用事件委托
+    $('.lt_products').on('click','.btn-buy',function(){
+
+        //获取点击产品的id
+        var id = $(this).data('id');
+        location.href = 'product.html?id='+id;
+
     });
 
 });

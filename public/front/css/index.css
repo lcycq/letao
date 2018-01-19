@@ -10,28 +10,3 @@
   display: block;
   width: 100%;
 }
-.lt_products {
-  padding: 10px;
-}
-.lt_products li {
-  float: left;
-  border: 1px solid #ccc;
-  width: 48%;
-  text-align: center;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #fff;
-}
-.lt_products li img {
-  width: 100%;
-  display: block;
-}
-.lt_products li .sp span:first-child {
-  color: red;
-}
-.lt_products li .sp span:last-child {
-  text-decoration: line-through;
-}
-.lt_products li:nth-child(odd) {
-  margin-right: 4%;
-}
